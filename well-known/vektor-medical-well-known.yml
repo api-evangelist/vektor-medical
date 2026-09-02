@@ -1,0 +1,45 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTPS probes of the named /.well-known/ path list on every Vektor Medical host
+note: >-
+  Every named path returned 404 on every reachable host, so NO WellKnown or SecurityTxt
+  pointer is emitted in apis.yml. This file records a verified absence, not a presence.
+  www.vektormedical.com is a Webflow-hosted marketing site that answers every
+  /.well-known/* request with a fixed "Invalid .well-known request" 404 body.
+  vmark.vektormedical.com resolves to an AWS ALB but refuses connections on TCP/443, so
+  no path on that host could be probed at all.
+hosts:
+- host: www.vektormedical.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: info.vektormedical.com
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+- host: vmark.vektormedical.com
+  documents:
+  - path: /.well-known/agent-card.json
+    status: '<no response>'
+    file: null
+    note: TCP/443 closed or filtered; one bounded attempt made, not retried.

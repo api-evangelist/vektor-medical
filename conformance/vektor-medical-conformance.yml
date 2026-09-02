@@ -1,0 +1,113 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://www.vektormedical.com/vmap plus the openFDA 510(k) device API
+  (https://api.fda.gov/device/510k.json?search=applicant:%22Vektor%20Medical%22)
+note: >-
+  Vektor Medical publishes no API and therefore no API-standards conformance surface.
+  What it does publish, and what is captured here, is medical-device regulatory
+  clearance. The API/interop rows below are all conforms:false with an explicit
+  "no contract published" evidence string — they are recorded as verified absences so a
+  reader can tell the difference between "not checked" and "checked, nothing there".
+
+conformance:
+
+# --- Regulatory clearances (REAL, third-party verifiable) ---
+- id: fda-510k
+  name: FDA 510(k) premarket notification
+  conforms: true
+  evidence: >-
+    Two clearances on record with FDA for applicant "Vektor Medical, Inc.", product code
+    DQK, device "Vektor Computational ECG Mapping System (vMap)": K211546 decided
+    2021-11-09 and K252429 decided 2025-12-04. Verified against the openFDA 510(k) API,
+    not a marketing claim.
+  identifiers:
+  - K211546
+  - K252429
+  product_code: DQK
+  source: https://api.fda.gov/device/510k.json?search=applicant:%22Vektor%20Medical%22
+
+- id: ce-mark-eu-mdr
+  name: CE Mark (EU Medical Device Regulation)
+  conforms: true
+  evidence: >-
+    Vektor Medical's own vMap product page states vMap is "FDA-cleared for commercial use
+    in the U.S. and CE marked for use in the EU" and "FDA-cleared and CE marked for nine
+    arrhythmia and pacing types". The company announced the CE Mark in October 2025.
+  source: https://www.vektormedical.com/vmap
+
+- id: samd
+  name: Software as a Medical Device (IMDRF SaMD)
+  conforms: true
+  evidence: >-
+    vMap is regulated and marketed as standalone software that analyzes 12-lead ECG data
+    and produces 2D/3D cardiac source maps; the December 2025 clearance describes its
+    conversion into a Software as a Medical Device.
+  source: https://www.vektormedical.com/vmap
+
+# --- Healthcare interoperability standards: probed, absent ---
+- id: hl7-fhir
+  name: HL7 FHIR
+  conforms: false
+  evidence: >-
+    No FHIR capability statement, resource endpoint, or FHIR claim appears anywhere on
+    vektormedical.com. No /metadata or FHIR base URL exists on any resolvable host.
+- id: hl7v2
+  name: HL7 v2 messaging
+  conforms: false
+  evidence: >-
+    No HL7 v2 message types, interface specification, or integration guide is published.
+    Device connectivity is described in press material only, with no public contract.
+- id: dicom
+  name: DICOM
+  conforms: false
+  evidence: No DICOM conformance statement is published on the company site.
+
+# --- Cross-cutting API standards: probed, absent (no contract to assert them against) ---
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: No public authorization server; /.well-known/oauth-authorization-server 404s.
+- id: oidc
+  name: OpenID Connect
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on www.vektormedical.com.
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document at any probed location on any Vektor Medical host
+    (STEP 0b contract discovery — all candidates 404).
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: No API contract published, so no error envelope to evaluate.
+
+# --- Domain standard signature (0.12.0 domain_standard_conformance) ---
+domain_standard:
+  market: cardiac electrophysiology / diagnostic medical devices
+  candidates_checked:
+  - HL7 FHIR
+  - HL7 v2
+  - DICOM
+  - IEEE 11073 (personal health device communication)
+  declared_in_contract: false
+  evidence: >-
+    REWARD-ONLY check, not satisfied and not penalised. There is no machine-readable
+    contract in which a domain standard could be declared. The regulatory clearances above
+    are real and verified but are device clearances, not a contract-declared data standard.
+
+compliance_certifications:
+  published: false
+  checked:
+  - SOC 2
+  - ISO 27001
+  - HIPAA
+  - PCI DSS
+  - FedRAMP
+  evidence: >-
+    The privacy policy (last updated 2025-07-11) names none of these; it describes only
+    generic "administrative, technical, and physical safeguards ... encryption, firewalls,
+    secure server environments, and access controls". No trust center exists at
+    trust.vektormedical.com (NXDOMAIN).
+  source: https://www.vektormedical.com/privacypolicy

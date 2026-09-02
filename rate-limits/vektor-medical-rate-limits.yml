@@ -1,0 +1,16 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.vektormedical.com/
+limit_count: 0
+rate_limits: []
+note: >-
+  Not applicable rather than undocumented. Vektor Medical exposes no public API, so there
+  is no request surface for a rate limit to govern and no response headers to observe.
+  Recorded as an honest zero so a reader can see this step ran. No RateLimits pointer is
+  wired into apis.yml: emitting one would signal a runtime rate-limit surface that does
+  not exist.
+evidence:
+- url: https://www.vektormedical.com/openapi.json
+  status: 404
+- url: https://www.vektormedical.com/api
+  status: 404

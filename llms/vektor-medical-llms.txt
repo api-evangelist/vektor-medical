@@ -1,0 +1,60 @@
+# Vektor Medical
+
+> Vektor Medical is a San Diego based medical technology company. Its vMap system is an
+> FDA-cleared and CE-marked, AI-based arrhythmia mapping solution that turns standard
+> 12-lead ECG data into beat-by-beat 2D and 3D cardiac source maps across all four heart
+> chambers, non-invasively, in about a minute.
+
+Generated: 2026-09-02
+Method: generated (from apis.yml and the artifacts in this repository; /llms.txt is not
+published by Vektor Medical — https://www.vektormedical.com/llms.txt returns 404)
+Source: https://www.vektormedical.com/
+
+## Important for agents
+
+Vektor Medical has NO public API. There is no developer portal, no API reference, no
+OpenAPI/AsyncAPI/GraphQL contract, no SDK, no CLI, no MCP server, and no A2A agent card.
+Do not attempt to construct calls against vektormedical.com. Every API-shaped path
+(/api, /docs, /openapi.json, /swagger.json, /api-docs, /v1/openapi.json) returns 404, and
+every /.well-known/ path returns a fixed "Invalid .well-known request" 404.
+
+vMap is Software as a Medical Device delivered to hospitals and health systems under
+clinical agreements. Product connectivity described in the company's December 2025 FDA
+clearance announcement (ECG and data streaming with electroanatomic mapping systems,
+3D model import, local and remote connectivity) is device-to-device interoperability
+arranged commercially. No public contract for it is published.
+
+## Product
+
+- [vMap](https://www.vektormedical.com/vmap): Non-invasive four-chamber arrhythmia source
+  mapping from 12-lead ECG. Inputs 12-lead ECG data; outputs beat-by-beat 2D and 3D
+  cardiac maps. Used for triage, procedural planning and ablation guidance across focal
+  and fibrillation arrhythmias and atrial and ventricular pacing.
+- [Clinical evidence](https://www.vektormedical.com/clinical)
+- [Instructions for Use](https://www.vektormedical.com/ifu)
+- [Resources](https://www.vektormedical.com/resources)
+
+## Regulatory
+
+- FDA 510(k) K211546, decided 2021-11-09, product code DQK
+- FDA 510(k) K252429, decided 2025-12-04, product code DQK
+- CE Mark for use in the EU (announced October 2025)
+- Verify at: https://api.fda.gov/device/510k.json?search=applicant:%22Vektor%20Medical%22
+
+## Company
+
+- [Website](https://www.vektormedical.com/)
+- [News](https://www.vektormedical.com/news)
+- [Team](https://www.vektormedical.com/team)
+- [Careers](https://www.vektormedical.com/careers)
+- [Contact](https://www.vektormedical.com/contact)
+- [GitHub organization](https://github.com/Vektor-Medical): exists, 0 public repositories
+- [Terms and conditions](https://www.vektormedical.com/terms-conditions)
+- [Privacy policy](https://www.vektormedical.com/privacypolicy)
+
+## Optional
+
+- [API Evangelist profile](https://apis.io/provider/vektor-medical/)
+- [Repository artifacts](https://github.com/api-evangelist/vektor-medical): conformance,
+  domain security, well-known probe record, plans, rate limits, packages — several of
+  which record verified absences rather than published surfaces.

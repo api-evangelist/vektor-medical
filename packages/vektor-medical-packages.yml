@@ -1,0 +1,22 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  registry.npmjs.org search API, pypi.org JSON API, and github.com/Vektor-Medical
+package_count: 0
+packages: []
+note: >-
+  No first-party client library exists in any public registry. npm search for
+  "vektormedical" returns 0 results; pypi.org/pypi/vektormedical/json returns 404. The
+  company's GitHub organization (github.com/Vektor-Medical, created 2024-05-01) is real
+  and public but publishes 0 public repositories. An unrelated PyPI package named "vmap"
+  exists and is NOT Vektor Medical's — it is not recorded here. No SDKs pointer is wired
+  into apis.yml because there is no SDK to point at.
+evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=vektormedical&size=5
+  status: 200
+  result: 0 packages
+- url: https://pypi.org/pypi/vektormedical/json
+  status: 404
+- url: https://api.github.com/orgs/Vektor-Medical/repos
+  status: 200
+  result: 0 public repositories

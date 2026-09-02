@@ -1,0 +1,18 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.vektormedical.com/sitemap.xml
+plan_count: 0
+plans: []
+note: >-
+  Vektor Medical publishes no pricing, plans, or tiers of any kind. The complete
+  sitemap for www.vektormedical.com is 13 pages (home, /vmap, /clinical, /resources,
+  /ifu, /news, /team, /careers, /contact, /privacypolicy, /terms-conditions, /consent,
+  /confirmation) and contains no /pricing page; there is no "request a quote" or
+  self-serve purchase path either. vMap is a regulated medical device sold into
+  hospitals and health systems through a direct sales motion under clinical agreements,
+  so an honest plan_count is 0 rather than an omitted file.
+evidence:
+- url: https://www.vektormedical.com/sitemap.xml
+  status: 200
+- url: https://www.vektormedical.com/contact
+  status: 200
