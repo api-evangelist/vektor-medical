@@ -33,6 +33,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/vektor-medical-rate-limits.yml
 - type: Website
   url: https://www.vektormedical.com/
 - type: Support
